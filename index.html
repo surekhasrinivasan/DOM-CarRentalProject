@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<script src="cars.js" type="text/javascript">
+	</script>
+	<title>Car Rental</title>
+</head>
+<body>
+	<h1>Business Name</h1>
+	<h2 id="busiName"></h2>
+	<form name="myForm" action=""
+onsubmit="return validateForm()">
+		<fieldset>
+			Renter's name:<br>
+			<input id="rentername" type="text"><br>
+			<br>
+			<input type="submit" value="Submit">
+		</fieldset><br>
+		<br>
+		<select id="mySelect" onchange="myFunction()">
+			<option value="Types">
+				Types
+			</option>
+			<option value="EconomyCars">
+				Economy Cars
+			</option>
+			<option value="MidSizeCars">
+				MidSize Cars
+			</option>
+		</select> 
+		<button onclick="rentFunction()">Rent-A-Car</button>
+	</form>
+</body>
+</html>
