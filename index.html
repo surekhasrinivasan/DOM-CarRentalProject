@@ -11,27 +11,21 @@
 <body>
 	<h1>Business Name</h1>
 	<h2 id="busiName"></h2>
-	<form name="myForm" action=""
-onsubmit="return validateForm()">
-		<fieldset>
-			Renter's name:<br>
-			<input id="rentername" type="text"><br>
-			<br>
-			<input type="submit" value="Submit">
-		</fieldset><br>
-		<br>
-		<select id="mySelect" onchange="myFunction()">
-			<option value="Types">
-				Types
+	<h3>Economy and Midsize Cars Available</h3>
+	<form id="carSelect" name='carSelect' onsubmit='return rentFunction()'>
+		Renter's name:<br>
+		<input name="rentername" type="text"> <select name="cartype" onchange='displayCar(this.value)'>
+			<option disabled hidden="" selected value="none">
+				Select Car Type
 			</option>
-			<option value="EconomyCars">
+			<option value='EconomyCars'>
 				Economy Cars
 			</option>
-			<option value="MidSizeCars">
-				MidSize Cars
+			<option value='MidsizeCars'>
+				Midsize Cars
 			</option>
-		</select> 
-		<button onclick="rentFunction()">Rent-A-Car</button>
+		</select> <button>Rent-A-Car</button>
 	</form>
+	<h3 id='displayInfo'></h3>
 </body>
 </html>
