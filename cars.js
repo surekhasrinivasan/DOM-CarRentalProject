@@ -23,20 +23,26 @@ function displayCar(val) {
 
 function rentFunction() {
 	var cartype = document.forms["carSelect"]['cartype'].value;
-	console.log(cartype);
+	//console.log(cartype);
 	var renter = document.forms["carSelect"]['rentername'].value;
-	console.log(renter);
+	//console.log(renter);
 	if (cartype == "none") {
 		alert("Please select a car type");
+		return false;
 	} else if (renter == "") {
 		alert("Please enter the Renter's name");
-	} else {
+		return false;
+	} else if(carRental[cartype].carsavailable <= 0){
+		alert(cartype + " not available");
+		return false;
+	}
+	else {
 		rental[cartype].push({name:renter});
 		carRental[cartype].carsavailable--;
-		if(carRental[cartype].carsavailable <= 0){
-		alert(cartype + " not available");
-	}
 		document.getElementById('displayInfo').innerHTML = "Your Rental Car is ready for pick up!";
+		event.preventDefault();
+		return true;
+		
 	}
-	return false;
+	
 }
